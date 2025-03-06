@@ -12,7 +12,7 @@
 
 import marimo
 
-__generated_with = "0.11.14"
+__generated_with = "0.11.16"
 app = marimo.App(width="medium")
 
 
@@ -103,6 +103,17 @@ def _(INFORMATION_SCHEMA, TABLES, mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.md(
+        f"""
+        You can explore the schemas of all your tables at a glance in the **data sources panel**: click
+        the {mo.icon("lucide:database")} icon in the left sidebar to open it.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.md(r"""Once the database is attached, you can query it with SQL. For example, the next cell computes the average track length of each composer in the chinook database.""")
     return
 
@@ -117,23 +128,10 @@ def _(chinook, mo, track):
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
-    mo.md(
-        f"""
-        You can explore the schemas of all your tables at a glance in the **data sources panel**: click
-        the {mo.icon("lucide:database")} icon in the left sidebar to open it.
-        """
-    )
+    mo.md("""You can also do the same using python by first loading the table to a dataframe""")
     return
-
-
-app._unparsable_cell(
-    r"""
-    You can also query the data using python
-    """,
-    name="_"
-)
 
 
 @app.cell
@@ -155,7 +153,6 @@ def _(track):
      .agg(pl.col("Milliseconds").mean().alias("avg_track_ms"))
      .sort("avg_track_ms", descending=True)
     )
-
     return (pl,)
 
 
