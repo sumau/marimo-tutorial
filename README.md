@@ -40,4 +40,4 @@ marimo edit main.py
 
 11. Explore the options in the drop down menu
 
-12. Make a change to the notebook and save it, then have a look at python script diff
+12. Make a change to the notebook and save it, then have a look at the `main.py` diff
