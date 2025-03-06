@@ -18,7 +18,7 @@ wget -qO- https://astral.sh/uv/install.sh | sh
 uv run main.py
 ```
 
-5. Comment out the comment block at the top of the python script and rerun it. It should fail. Revert your changes.
+5. Remove the comment block at the top of the python script and rerun it. It should fail. Revert your changes.
 
 6. Create a uv venv, install marimo and activate it:
 
