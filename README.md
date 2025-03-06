@@ -10,7 +10,7 @@ This tutorial is a whistlestop tour of [uv](https://docs.astral.sh/uv/), [marimo
 wget -qO- https://astral.sh/uv/install.sh | sh
 ```
 
-3. Clone https://github.com/uktrade/marimo-tutorial.git
+3. Clone this repo
 
 4. Run the python script:
 
